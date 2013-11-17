@@ -1,8 +1,8 @@
 === Pro Categories Widget ===
 Contributors: shambhu patnaik
 Donate link: http://aynsoft.com/
-Tags: pro categories widget,exclude categories widget,exclude categories,advanced categories widget,exclude categories	
-Requires at least: 2.8
+Tags: pro categories widget,exclude categories widget,exclude categories,advanced categories widget,exclude categories,exclude category,category
+Requires at least: 2.9
 Tested up to: 3.7.1
 Stable tag: 1.0
 License: GPLv2 or later
