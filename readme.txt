@@ -1,5 +1,5 @@
 === Pro Categories Widget ===
-Contributors: shambhu patanik
+Contributors: shambhu patnaik
 Donate link: http://aynsoft.com/
 Tags: pro categories widget,exclude categories widget,exclude categories,advanced categories widget,exclude categories	
 Requires at least: 2.8
