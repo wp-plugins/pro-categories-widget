@@ -3,9 +3,9 @@
 Plugin Name: Pro Categories Widget
 Plugin URI: http://wordpress.org/extend/plugins/pro-categories-widget/
 Description: Pro Categories Widget plugin.You have choice to specific categories exclude.
-Version: 1.0
+Version: 1.1
 Author: Shambhu Prasad Patnaik
-Author URI:http://aynsoft.com/
+Author URI:http://socialcms.wordpress.com/
 */
 class Pro_Categories_Widget extends WP_Widget {
 
@@ -23,12 +23,13 @@ class Pro_Categories_Widget extends WP_Widget {
 		$c = ! empty( $instance['count'] ) ? '1' : '0';
 		$h = ! empty( $instance['hierarchical'] ) ? '1' : '0';
 		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
+		$hc = ! empty( $instance['hide_category'] ) ? '1' : '0';
 
 		echo $before_widget;
 		if ( $title )
 			echo $before_title . $title . $after_title;
 
-		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude' => $exclude);
+		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude' => $exclude,'hide_empty'=>$hc);
 
 		if ( $d ) {
 			$cat_args['show_option_none'] = __('Select Category');
@@ -69,6 +70,7 @@ class Pro_Categories_Widget extends WP_Widget {
 		$instance['count'] = !empty($new_instance['count']) ? 1 : 0;
 		$instance['hierarchical'] = !empty($new_instance['hierarchical']) ? 1 : 0;
 		$instance['dropdown'] = !empty($new_instance['dropdown']) ? 1 : 0;
+		$instance['hide_category'] = !empty($new_instance['hide_category']) ? 1 : 0;
 
 		return $instance;
 	}
@@ -81,6 +83,7 @@ class Pro_Categories_Widget extends WP_Widget {
 		$count = isset($instance['count']) ? (bool) $instance['count'] :false;
 		$hierarchical = isset( $instance['hierarchical'] ) ? (bool) $instance['hierarchical'] : false;
 		$dropdown = isset( $instance['dropdown'] ) ? (bool) $instance['dropdown'] : false;
+		$hide_category = isset( $instance['hide_category'] ) ? (bool) $instance['hide_category'] : true;
 ?>
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
@@ -97,7 +100,12 @@ class Pro_Categories_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id('count'); ?>"><?php _e( 'Show post counts' ); ?></label><br />
 
 		<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('hierarchical'); ?>" name="<?php echo $this->get_field_name('hierarchical'); ?>"<?php checked( $hierarchical ); ?> />
-		<label for="<?php echo $this->get_field_id('hierarchical'); ?>"><?php _e( 'Show hierarchy' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id('hierarchical'); ?>"><?php _e( 'Show hierarchy' ); ?></label><br />
+		
+		<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('hide_category'); ?>" name="<?php echo $this->get_field_name('hide_category'); ?>"<?php checked( $hide_category ); ?> />
+		<label for="<?php echo $this->get_field_id('hide_category'); ?>"><?php _e( 'Hide Category with no posts.' ); ?></label>
+
+		</p>
 <?php
 	}
 

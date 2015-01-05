@@ -4,7 +4,7 @@ Donate link: http://socialcms.wordpress.com/
 Tags: pro categories widget,exclude categories widget,exclude categories,advanced categories widget,exclude categories,exclude category,category
 Requires at least: 2.9
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,7 @@ Pro Categories Widget plugin.You have choice to specific categories exclude.
  1. You have choice to specific categories exclude.
  2. Show post count like WordPress category widget.
  3. Exclude multiple categories (comma separated).
+ 4. Show all categories.
 
 More detail : http://socialcms.wordpress.com/
 
@@ -32,7 +33,8 @@ More detail : http://socialcms.wordpress.com/
 
 == Frequently Asked Questions ==
 
-N/A
+* **How to show all categories with no post
+Hide Category with no posts option ckeck box to uncheck
 
 == Screenshots ==
 
@@ -41,7 +43,11 @@ N/A
 
 == Changelog ==
 
-N/A
+= 1.1 =
+* Add hide category with no posts option
+
+= 1.0 =
+* Initial release
 
 == Upgrade Notice ==
 
