@@ -34,6 +34,7 @@ More detail : http://socialcms.wordpress.com/
 == Frequently Asked Questions ==
 
 * **How to show all categories with no post
+
 Hide Category with no posts option ckeck box to uncheck
 
 == Screenshots ==
