@@ -3,7 +3,7 @@
 Plugin Name: Pro Categories Widget
 Plugin URI: http://wordpress.org/extend/plugins/pro-categories-widget/
 Description: Pro Categories Widget plugin.You have choice to specific categories exclude.
-Version: 1.1
+Version: 1.2
 Author: Shambhu Prasad Patnaik
 Author URI:http://socialcms.wordpress.com/
 */
@@ -29,7 +29,7 @@ class Pro_Categories_Widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 
-		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude' => $exclude,'hide_empty'=>$hc);
+		$cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h,'exclude' => $exclude,'hide_empty'=>$hc,'id'=>'cat_'.$this->number);
 
 		if ( $d ) {
 			$cat_args['show_option_none'] = __('Select Category');
@@ -38,13 +38,13 @@ class Pro_Categories_Widget extends WP_Widget {
 
 <script type='text/javascript'>
 /* <![CDATA[ */
-	var dropdown = document.getElementById("cat");
-	function onCatChange() {
-		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-			location.href = "<?php echo home_url(); ?>/?cat="+dropdown.options[dropdown.selectedIndex].value;
+	var dropdown_<?php echo $this->number;?> = document.getElementById("cat_<?php echo $this->number;?>");
+	function onCatChange_<?php echo $this->number;?>() {
+		if ( dropdown_<?php echo $this->number;?>.options[dropdown_<?php echo $this->number;?>.selectedIndex].value > 0 ) {
+			location.href = "<?php echo home_url(); ?>/?cat="+dropdown_<?php echo $this->number;?>.options[dropdown_<?php echo $this->number;?>.selectedIndex].value;
 		}
 	}
-	dropdown.onchange = onCatChange;
+	dropdown_<?php echo $this->number;?>.onchange = onCatChange_<?php echo $this->number;?>;
 /* ]]> */
 </script>
 

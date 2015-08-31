@@ -3,8 +3,8 @@ Contributors: shambhu patnaik
 Donate link: http://socialcms.wordpress.com/
 Tags: pro categories widget,exclude categories widget,exclude categories,advanced categories widget,exclude categories,exclude category,category
 Requires at least: 2.9
-Tested up to: 4.2.1
-Stable tag: 1.1
+Tested up to: 4.3
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Hide Category with no posts option ckeck box to uncheck
 
 
 == Changelog ==
+
+= 1.2 =
+* fix error multiple widget case
 
 = 1.1 =
 * Add hide category with no posts option
